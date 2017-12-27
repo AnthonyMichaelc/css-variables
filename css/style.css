@@ -1,0 +1,86 @@
+/* CSS is not demonstrating full responsive but more on the variables inside of css (rather than using less or sass) */
+/*
+* Define Variables for root elements
+*/
+:root {
+  --main-bg-color: #f4f4f4;
+  --main-txt-color:#333;
+  --container-width: 90%;
+  --header-bg-color: #333;
+  --header-txt-color: #fff;
+}
+
+/* Default body settings */
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-txt-color)
+}
+
+/* setting container class */
+.container {
+  width: var(--container-width);
+  margin:20px auto;
+}
+
+/* Header main attributes */
+header#main-header {
+  background-color: var(--header-bg-color);
+  color: var(--header-txt-color);
+}
+
+/* Header h1 tag */
+header#main-header h1 {
+  padding: 0;
+  padding: 0;
+}
+/* grid setup */
+.grid {
+  --gap: 20;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: calc(var(--gap) * 1px);
+  align-items: center;
+}
+
+/* 
+* Define box Variables
+*/
+.box {
+  --box-bg-color: #ddd;
+  --box-main-color: #06c;
+  --box-padding: 5px 10px;
+  --box-shadow-h-offset: 10px;
+  --box-shadow-v-offset: 5px;
+  --box-shadow-blur: 5px;
+}
+
+/* setting main box attributes */
+.box {
+  background-color: var(--box-bg-color);
+  padding: var(--box-padding) ;
+  border: 1px solid var(--box-main-color);
+  box-shadow: 
+  var(--box-shadow-h-offset) 
+  var(--box-shadow-v-offset) 
+  var(--box-shadow-blur) 
+  var(--box-main-color);
+}
+
+/* box h1 tag */
+.box h1 {
+  color: var(--box-main-color);
+}
+
+/* 
+* Override Variables
+*/
+/* box p tag */
+.box p {
+  /* --box-main-color: #555;
+  color: var(--box-main-color); */
+  color: var(--box-p-color, #555)
+}

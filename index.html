@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- head of document
+  - title
+  - style links
+  - meta -->
+  <title>Working CSS Variables</title>
+</head><!-- ./ head -->
+<body><!-- document body begins -->
+  <header id="main-header">
+    <h1>Css Variables</h1>
+  </header><!-- ./ header -->
+  <!-- page content -->
+  <div class="container">
+    <div class="grid">
+      <div class="box">
+        <h1>Hello World</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maxime ea, illo consequatur assumenda qui, quo perspiciatis itaque reprehenderit totam tempora quas nisi consequuntur fugiat a iste ratione temporibus cupiditate.</p><!-- ./ first paragraph -->
+      </div><!-- ./ first content -->
+      <div class="box">
+        <h1>Hello World</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maxime ea, illo consequatur assumenda qui, quo perspiciatis itaque reprehenderit totam tempora quas nisi consequuntur fugiat a iste ratione temporibus cupiditate.</p><!-- ./ second paragraph -->
+      </div><!-- ./ secont content -->
+    </div><!-- ./ grid  -->
+  </div><!-- ./ content container -->
+  <!-- ./ page content -->
+
+<!-- Javascript -->
+  <script type="text/javascript">
+    // find box
+    const box = document.querySelector('.box');
+    const boxStyles = getComputedStyle(box);// get the style of box
+    // uncomment below to console log out the result
+    // console.log(boxStyles); 
+    const boxMainColor = boxStyles.getPropertyValue('--box-main-color'); // get the main color of box
+    console.log(boxMainColor); // console log the box main color
+    // change the var
+    const header = document.querySelector('#main-header'); // get the header with the id main-header
+    header.style.setProperty('--header-bg-color', boxMainColor); // attach the main box color to the header background
+  </script>
+</body>
+</html>
